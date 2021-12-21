@@ -1,0 +1,23 @@
+{
+  "name": "proshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mahfod-dev/PROSHOP.git"
+  },
+  "author": "mahfod-dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mahfod-dev/PROSHOP/issues"
+  },
+  "homepage": "https://github.com/Mahfod-dev/PROSHOP#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
