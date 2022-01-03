@@ -1,30 +1,31 @@
 {
-  "name": "proshop",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "start": "node backend/server",
-    "server": "nodemon backend/server",
-    "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mahfod-dev/PROSHOP.git"
-  },
-  "author": "mahfod-dev",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Mahfod-dev/PROSHOP/issues"
-  },
-  "homepage": "https://github.com/Mahfod-dev/PROSHOP#readme",
-  "dependencies": {
-    "dotenv": "^10.0.0",
-    "express": "^4.17.2"
-  },
-  "devDependencies": {
-    "concurrently": "^6.5.1",
-    "nodemon": "^2.0.15"
-  }
+	"name": "proshop",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"type": "module",
+	"scripts": {
+		"start": "node backend/server",
+		"server": "nodemon backend/server",
+		"client": "npm start --prefix frontend",
+		"dev": "concurrently \"npm run server\" \"npm run client\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Mahfod-dev/PROSHOP.git"
+	},
+	"author": "mahfod-dev",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Mahfod-dev/PROSHOP/issues"
+	},
+	"homepage": "https://github.com/Mahfod-dev/PROSHOP#readme",
+	"dependencies": {
+		"dotenv": "^10.0.0",
+		"express": "^4.17.2"
+	},
+	"devDependencies": {
+		"concurrently": "^6.5.1",
+		"nodemon": "^2.0.15"
+	}
 }
