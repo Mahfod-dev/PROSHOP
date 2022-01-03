@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Mahfod-dev/PROSHOP#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.2"
   },
   "devDependencies": {
