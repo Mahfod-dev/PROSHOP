@@ -21,8 +21,10 @@
 	},
 	"homepage": "https://github.com/Mahfod-dev/PROSHOP#readme",
 	"dependencies": {
+		"colors": "^1.4.0",
 		"dotenv": "^10.0.0",
-		"express": "^4.17.2"
+		"express": "^4.17.2",
+		"mongoose": "^6.1.4"
 	},
 	"devDependencies": {
 		"concurrently": "^6.5.1",
