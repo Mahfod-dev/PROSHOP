@@ -10,6 +10,11 @@ router.get(
 		const products = await Product.find({})
 
 		res.json(products)
+		// if (products) {
+		// 	res.json(products)
+		// } else {
+		// 	throw new Error('Not NOT')
+		// }
 	})
 )
 router.get(

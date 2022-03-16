@@ -1,23 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import axios from 'axios'
+
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
 
-const ProductScreen = ({ match }) => {
+import { listProductDetail } from '../actions/productAction'
+import { useDispatch, useSelector } from 'react-redux'
+
+const ProductScreen = () => {
+	const dispatch = useDispatch()
+
+	const productDetails = useSelector((state) => state.productDetails)
+
+	const { loading, error, product } = productDetails
+	console.log(loading, error, product)
 	// const { id } = useParams();
 
 	// const product = products.filter((product) => product._id === match.params.id);
-	const [product, setProduct] = useState({})
+	// const [product, setProduct] = useState({})
 	const { id } = useParams()
 	useEffect(() => {
-		const fetchProduct = async () => {
-			const { data } = await axios.get(`/api/products/${id}`)
-			console.log(data)
-			setProduct(data)
-		}
-		fetchProduct()
-	}, [id])
+		// const fetchProduct = async () => {
+		// 	const { data } = await axios.get(`/api/products/${id}`)
+		// 	console.log(data)
+		// 	setProduct(data)
+		dispatch(listProductDetail(id))
+
+		// fetchProduct()
+	}, [dispatch, id])
 
 	// const [product, setProduct] = useState({})
 
