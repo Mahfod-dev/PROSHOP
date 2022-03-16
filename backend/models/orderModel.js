@@ -41,14 +41,6 @@ const orderSchema = new mongoose.Schema(
 			required: true,
 			default: 0.0,
 		},
-<<<<<<< HEAD
-=======
-		shippingPrice: {
-			type: Number,
-			required: true,
-			default: 0.0,
-		},
->>>>>>> 1b4af356f84080d4a9c8e84b376389a8fc18f27b
 		totalPrice: {
 			type: Number,
 			required: true,
@@ -72,7 +64,6 @@ const orderSchema = new mongoose.Schema(
 		},
 	},
 	{
-<<<<<<< HEAD
 		timestamps: true, // creation automatique
 	}
 );
@@ -80,12 +71,3 @@ const orderSchema = new mongoose.Schema(
 const Order = mongoose.model("Order", orderSchema);
 
 export default Order;
-=======
-		timestamps: true,
-	}
-)
-
-const Order = mongoose.model('Order', orderSchema)
-
-export default Order
->>>>>>> 1b4af356f84080d4a9c8e84b376389a8fc18f27b

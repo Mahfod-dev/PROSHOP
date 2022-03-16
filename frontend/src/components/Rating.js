@@ -2,10 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Rating = ({ value, text, color }) => {
-<<<<<<< HEAD:frontend/src/components/Rating.js
-=======
-
->>>>>>> 1b4af356f84080d4a9c8e84b376389a8fc18f27b:proshop/src/components/Rating.js
 	return (
 		<div className="rating">
 			<span>
