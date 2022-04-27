@@ -1,7 +1,7 @@
 {
 	"name": "proshop",
 	"version": "1.0.0",
-	"description": "",
+	"description": "add product",
 	"main": "server.js",
 	"type": "module",
 	"scripts": {
@@ -16,7 +16,7 @@
 		"type": "git",
 		"url": "git+https://github.com/Mahfod-dev/PROSHOP.git"
 	},
-	"author": "mahfod-dev",
+	"author": "Mahfod.dev",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/Mahfod-dev/PROSHOP/issues"
@@ -31,7 +31,7 @@
 		"mongoose": "^6.1.4"
 	},
 	"devDependencies": {
-		"concurrently": "^6.5.1",
-		"nodemon": "^2.0.15"
+		"concurrently": "^6.2.1",
+		"nodemon": "^2.0.12"
 	}
 }
