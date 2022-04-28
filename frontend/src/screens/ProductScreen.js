@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import { listProductDetails } from '../actions/productActions'
+import { addToCart } from '../actions/cartActions'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 
@@ -12,7 +13,7 @@ const ProductScreen = () => {
 	const { id } = useParams()
 	const history = useHistory()
 	const productDetail = useSelector((state) => state.productDetail)
-	const [qty, setQty] = useState(0)
+	const [qty, setQty] = useState(1)
 
 	const { loading, error, product } = productDetail
 
@@ -21,10 +22,12 @@ const ProductScreen = () => {
 	}, [dispatch, id])
 
 	const addToCartHandler = () => {
-		history.push(`/cart/${id}?qty=${qty}`)
+		dispatch(addToCart(product._id, qty))
+		// history.push(`/cart/${id}?qty=${qty}`)
+		history.push('/cart')
 	}
 
-	console.log(product)
+
 	// const { id } = useParams();
 
 	// 	const product = products.find((product) =>{
@@ -82,56 +85,29 @@ const ProductScreen = () => {
 										</Col>
 									</Row>
 								</ListGroup.Item>
-<<<<<<< HEAD
 
 								{product.countInStock > 0 && (
 									<ListGroup.Item>
 										<Row>
 											<Col>Qty</Col>
-=======
-								{product.countInStock > 0 && (
-									<ListGroup.Item>
-										<Row>
-											<Col>Quantity </Col>
->>>>>>> 3ece9f46a0a00e6a7b03af0c20cda343aad05228
 											<Col>
 												<Form.Control
 													as='select'
 													value={qty}
 													onChange={(e) => setQty(e.target.value)}>
-<<<<<<< HEAD
 													{[...Array(product.countInStock).keys()].map((x) => (
 														<option key={x + 1}>{x + 1}</option>
 													))}
-=======
-													{[...Array(product.countInStock).keys()].map(
-														(product, index) => {
-															return (
-																<option key={index} value={product + 1}>
-																	{product + 1}
-																</option>
-															)
-														}
-													)}
->>>>>>> 3ece9f46a0a00e6a7b03af0c20cda343aad05228
 												</Form.Control>
 											</Col>
 										</Row>
 									</ListGroup.Item>
 								)}
-<<<<<<< HEAD
-
-=======
->>>>>>> 3ece9f46a0a00e6a7b03af0c20cda343aad05228
 								<ListGroup.Item>
 									<Button
 										className='btn-block'
 										type='button'
-<<<<<<< HEAD
 										onClick={addToCartHandler}
-=======
-										onClick={addHandleCart}
->>>>>>> 3ece9f46a0a00e6a7b03af0c20cda343aad05228
 										disabled={product.countInStock === 0}>
 										ADD TO CART
 									</Button>

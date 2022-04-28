@@ -1,6 +1,7 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
+import bcrypt from 'bcryptjs'
 
-const userSchema = mongoose.Schema(
+const UserSchema = new mongoose.Schema(
 	{
 		name: {
 			type: String,
@@ -24,8 +25,23 @@ const userSchema = mongoose.Schema(
 	{
 		timestamps: true, // creation automatique
 	}
-);
+)
 
-const User = mongoose.model("User", userSchema);
+UserSchema.pre('save', async function () {
+	console.log(this.modifiedPaths())
 
-export default User;
+	if (!this.isModified('password')) return
+
+	const salt = await bcrypt.genSalt(10)
+	this.password = await bcrypt.hash(this.password, salt)
+})
+
+UserSchema.methods.comparePassword = async function (canditatePassword) {
+	const isMatch = await bcrypt.compare(canditatePassword, this.password)
+	console.log(isMatch)
+	return isMatch
+}
+
+const User = mongoose.model('User', UserSchema)
+
+export default User

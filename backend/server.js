@@ -1,41 +1,32 @@
 import express from 'express'
 import dotenv from 'dotenv'
+dotenv.config()
+import cors from 'cors'
 import colors from 'colors'
 import connectDB from './config/db.js'
-<<<<<<< HEAD
 
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 
 import productRoutes from './routes/productRoutes.js'
-=======
-import productRoutes from './routes/productRoutes.js '
-import { notFound, errorHandler } from './middleware/errorMiddleware.js'
->>>>>>> 3ece9f46a0a00e6a7b03af0c20cda343aad05228
-
-dotenv.config()
+import usersRoutes from './routes/usersRoutes.js'
 
 connectDB()
 
 const app = express()
 
+app.use(cors())
+
+app.use(express.json())
+
 app.get('/', (req, res) => {
-<<<<<<< HEAD
 	res.send('API IS RUNNING')
 })
 
 app.use('/api/products', productRoutes)
 
+app.use('/api/users', usersRoutes)
+
 app.use(notFound, errorHandler)
-=======
-	res.send('API is running....')
-})
->>>>>>> 3ece9f46a0a00e6a7b03af0c20cda343aad05228
-
-app.use('/api/products', productRoutes)
-
-app.use(notFound)
-
-app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000
 
